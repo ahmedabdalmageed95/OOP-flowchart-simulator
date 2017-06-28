@@ -1,0 +1,69 @@
+void Connector::select()
+{
+
+	if (Start.x == End.x && Start.y<End.y)
+	{
+		if ((position.y>Start.y && position.y<End.y)&&position.x==start.x)
+		{
+		isselected=true;
+		}
+    }
+	if (Start.x == End.x && Start.y>End.y)
+	{
+		if ((position.y<Start.y && position.y>End.y)&&position.x==start.x)
+		{
+		isselected=true;
+		}
+	}
+	if (Start.y== End.y && Start.x<End.x)
+	{
+		if ((position.x>Start.x && position.x<End.x)&&position.y==start.y)
+		{
+		isselected=true;
+		}
+	}
+	if (Start.y == End.y && Start.x>End.x)
+	{
+		if ((position.x<Start.x && position.x>End.x)&&position.y==start.y)
+		{
+		isselected=true;
+		}
+	}
+	
+		
+		if (Start.x<End.x && Start.y>End.y)
+		{
+		if ((position.x>Start.x&&position.x<End.x)&&position.y==start.y) ||((position.y>End.y&&position.y<Start.y)&&position.x==end.x)
+		{
+		isselected=true;
+		}
+
+		}
+		if (Start.x>End.x && Start.y>End.y)
+		{
+		if ((position.x<Start.x&&position.x>End.x)&&position.y==start.y) ||(position.y>End.y&&position.y<Start.y)&&position.x==end.x)
+		{
+		isselected=true;
+		}
+
+		}
+		
+if (Start.x<End.x && Start.y<End.y)
+		{
+		if ((position.x>Start.x&&position.x<End.x) &&position.y==start.y) ||(position.y<End.y&&position.y>Start.y)&&position.x==end.x)
+		{
+		isselected=true;
+		}
+
+		}
+	}
+if (Start.x>End.x && Start.y<End.y)
+		{
+		if ((position.x<Start.x&&position.x>End.x)&& position.y==start.y||(position.y<End.y&&position.y>Start.y)&&position.x==end.x)
+		{
+		isselected=true;
+		}
+
+		
+	
+}
