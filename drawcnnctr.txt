@@ -1,0 +1,106 @@
+void Connector::Draw(Output* pOut) 
+{ 
+	if (dynamic_cast <SmplAssign*>(SrcStat))
+	{
+	 Start=dynamic_cast <SmplAssign*>(SrcStat)->getOutlet();
+	}
+
+	else{
+		if (dynamic_cast <SnglOpAssign*>(SrcStat))
+		{
+		Start=dynamic_cast <SnglOpAssign*>(SrcStat)->GetOutlet();
+		}
+	
+
+	else{
+		if (dynamic_cast <VarAssign*>(SrcStat))
+		{
+		Start=dynamic_cast <VarAssign*>(SrcStat)->GetOutlet();
+		}
+		else{
+		if (dynamic_cast <Start*>(SrcStat))
+		{
+		Start=dynamic_cast <Start*>(SrcStat)->GetOutlet();
+		}
+		else{
+		if (dynamic_cast <Read*>(SrcStat))
+		{
+		Start=dynamic_cast <Read*>(SrcStat)->GetOutlet();
+		}
+		else{
+		if (dynamic_cast <Write*>(SrcStat))
+		{
+		Start=dynamic_cast <Write*>(SrcStat)->GetOutlet();
+		}
+
+else{
+		if (dynamic_cast <Conditional*>(SrcStat))
+		{
+		Start=dynamic_cast <Conditional*>(SrcStat)->GetOutlet();
+		}
+	}
+
+	}
+
+	}
+
+	}
+
+	}
+
+	}
+
+	if (dynamic_cast <SmplAssign*>(DstStat))
+	{
+	 Start=dynamic_cast <SmplAssign*>(DstStat)->getInlet();
+	}
+
+	else{
+		if (dynamic_cast <SnglOpAssign*>(DstStat))
+		{
+		Start=dynamic_cast <SnglOpAssign*>(DstStat)->GetInlet();
+		}
+	
+
+	else{
+		if (dynamic_cast <VarAssign*>(DstStat))
+		{
+		Start=dynamic_cast <VarAssign*>(DstStat)->GetInlet();
+		}
+		else{
+		if (dynamic_cast <End*>(DstStat))
+		{
+		Start=dynamic_cast <End*>(DstStat)->GetInlet();
+		}
+		else{
+		if (dynamic_cast <Read*>(DstStat))
+		{
+		Start=dynamic_cast <Read*>(DstStat)->GetInlet();
+		}
+		else{
+		if (dynamic_cast <Write*>(DstStat))
+		{
+		Start=dynamic_cast <Write*>(DstStat)->GetInlet();
+		}
+		
+		
+else{
+		if (dynamic_cast <Conditional*>(DstStat))
+		{
+		Start=dynamic_cast <Conditional*>(DstStat)->GetInlet();
+		}
+	}
+
+	}
+
+	}
+
+	}
+
+	}
+
+	}
+	pOut->DrawConnector(Start,End);
+	}
+
+}
